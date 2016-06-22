@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="forecast">预报</string>
+    <string name="felt_air_temp">体感温度</string>
+    <string name="humidity">湿度</string>
+    <string name="wind">风力风向</string>
+    <string name="uv_index">紫外线强度</string>
+    <string name="dressing_index">穿衣指数</string>
+    <string name="detail">详细信息</string>
+    <string name="pm">PM 2.5</string>
+    <string name="default_text">_ _</string>
+</resources>
