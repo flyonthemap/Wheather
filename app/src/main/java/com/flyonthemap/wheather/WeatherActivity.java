@@ -2,7 +2,10 @@ package com.flyonthemap.wheather;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -14,6 +17,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
  * Created by flyonthemap on 16/6/21.
  */
 public class WeatherActivity extends Activity {
+    private static final int REQUEST = 1;
     private PullToRefreshScrollView pullToRefreshScrollView;
     private ScrollView mScrollView;
     private TextView tvCity;
@@ -60,8 +64,31 @@ public class WeatherActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_wheather);
         initView();
-    }
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Message message = Message.obtain();
+                message.what = REQUEST;
+                WeatherBean weatherBean = WeatherReportByCity.getWeatherByCity("上海");
+                message.obj = weatherBean;
+                handler.sendMessage(message);
+            }
+        }).start();
 
+    }
+    private Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what){
+                case REQUEST:
+                    Log.d(Config.TAG,"hahah");
+                    WeatherBean weatherBean = (WeatherBean) msg.obj;
+///                    Log.d(Config.TAG,weatherBean.getInfoHumidity());
+                    break;
+            }
+        }
+
+    };
     private void initView(){
         pullToRefreshScrollView = (PullToRefreshScrollView) findViewById(R.id.pull_to_refresh);
         pullToRefreshScrollView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ScrollView>() {
@@ -94,7 +121,7 @@ public class WeatherActivity extends Activity {
         ivNextTwelve = (ImageView) findViewById(R.id.iv_next_twelve);
         ivNextFifteen = (ImageView) findViewById(R.id.iv_next_fifteen);
 
-//        未来三天的温度情况
+//        未来三天的天气和温度情况
         tvToday = (TextView) findViewById(R.id.tv_today);
         ivTodayWeather = (ImageView) findViewById(R.id.iv_today_weather);
         tvTodayTempA = (TextView) findViewById(R.id.tv_today_temp_a);

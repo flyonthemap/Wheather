@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Weather</string>
-    <string name="forecast">预报</string>
+    <string name="futureThree">未来三天</string>
+    <string name="forecast">今日预报</string>
     <string name="felt_air_temp">体感温度</string>
     <string name="humidity">湿度</string>
     <string name="wind">风力风向</string>
@@ -9,4 +10,7 @@
     <string name="detail">详细信息</string>
     <string name="pm">PM 2.5</string>
     <string name="default_text">_ _</string>
+    <string name="dressing_advice">穿衣建议</string>
+    <string name="high">最高</string>
+    <string name="low">最低</string>
 </resources>
