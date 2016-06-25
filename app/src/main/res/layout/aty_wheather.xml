@@ -194,10 +194,68 @@
                         android:src="@drawable/d00"/>
 
                 </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"                android:orientation="vertical"
+                android:background="@drawable/wireframe_dark">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="3"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:textColor="@color/text_color"
+                        android:text="@string/futureThree"/>
+
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/light_grey"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="3"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textColor="@color/text_color"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+
+                        android:textColor="@color/text_color"
+                        android:text="@string/high"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_color"
+                        android:text="@string/low"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/light_grey"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp">
+
                     <TextView
                         android:id="@+id/tv_today"
                         android:layout_height="match_parent"
@@ -343,7 +401,6 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="@string/default_text"/>
-
                 </LinearLayout>
             </LinearLayout>
 
@@ -360,30 +417,6 @@
                     android:textSize="20sp"
                     android:textColor="@color/text_color"
                     android:text="@string/detail"/>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="4dp"
-                    android:background="@color/light_grey"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="6"
-                        android:gravity="left"
-                        android:layout_marginLeft="24dp"
-                        android:text="@string/felt_air_temp"/>
-                    <TextView
-                        android:id="@+id/tv_felt_temp"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:gravity="left"
-                        android:text="@string/default_text"/>
-                </LinearLayout>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
